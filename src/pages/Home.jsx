@@ -134,7 +134,7 @@ const HotelHomepage = () => {
               <div className="w-20 h-1 bg-gradient-to-r from-amber-400 to-teal-400 mx-auto animate-fade-in-delay-2" />
             </div>
 
-            <div className="flex flex-row justify-center gap-4 mb-8 animate-fade-in-delay-3">
+            <div className="flex flex-row justify-center gap-4 -mt-4 mb-8 animate-fade-in-delay-3">
               <Link to="/reservation">
                 <button className="bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-white px-8 py-3 rounded-full transition-all transform hover:scale-105 font-medium">
                   Réserver Maintenant
