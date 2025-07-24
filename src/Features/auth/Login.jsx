@@ -1,17 +1,26 @@
+// src/pages/Login.jsx
 import { Eye, EyeOff, Lock, Mail } from 'lucide-react';
 import { useState } from 'react';
 import agnegheLogo from "../../assets/agnegheLogo.png";
+import { login } from '../../services/authService';
 
 export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({ email: '', password: '' });
+  const [error, setError] = useState('');
 
   const handleInputChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = () => {
-    console.log('Login attempt:', formData);
+  const handleSubmit = async () => {
+    setError('');
+    try {
+      await login(formData.email, formData.password);
+      window.location.href = '/adminDashboard'; // ✅ redirect after login
+    } catch (err) {
+      setError(err);
+    }
   };
 
   const HotelLogo = () => (
@@ -30,8 +39,8 @@ export default function Login() {
         {/* Logo and welcome message */}
         <div className="text-center">
           <HotelLogo />
-          <h1 className="text-xl font-bold text-teal-700 mb-1">Bienvenu to AGNEGHE</h1>
-          <p className="text-gray-600 text-sm -mt-1">Sign in to continue</p>
+          <h1 className="text-xl font-bold text-teal-700 mb-1">Bienvenue à AGNEGHE</h1>
+          <p className="text-gray-600 text-sm -mt-1">Connectez-vous pour continuer</p>
         </div>
 
         {/* Login form box */}
@@ -81,6 +90,13 @@ export default function Login() {
             </div>
           </div>
 
+          {/* Error message */}
+          {error && (
+            <div className="text-sm text-red-600 text-center">
+              {error}
+            </div>
+          )}
+
           {/* Options */}
           <div className="flex items-center justify-between text-sm">
             <label className="flex items-center space-x-2">
@@ -106,7 +122,7 @@ export default function Login() {
           {/* Divider */}
           <div className="flex items-center gap-2">
             <hr className="flex-grow border-gray-200" />
-            <span className="text-xs text-gray-400">or</span>
+            <span className="text-xs text-gray-400">ou</span>
             <hr className="flex-grow border-gray-200" />
           </div>
 

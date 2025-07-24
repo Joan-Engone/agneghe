@@ -1,6 +1,6 @@
 import { Outlet, useLocation } from 'react-router-dom';
-import Footer from './Footer';
 import Navbar from './Navbar';
+import Footer from './Footer';
 
 const Layout = () => {
   const location = useLocation();
@@ -8,11 +8,13 @@ const Layout = () => {
   const shouldHideLayout = hideLayoutRoutes.includes(location.pathname);
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="flex flex-col min-h-screen">
       {!shouldHideLayout && <Navbar />}
-      <div className="flex-1 p-4">
+
+      <main className="flex-grow">
         <Outlet />
-      </div>
+      </main>
+
       {!shouldHideLayout && <Footer />}
     </div>
   );
