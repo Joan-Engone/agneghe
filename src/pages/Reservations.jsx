@@ -108,10 +108,7 @@ const Reservation = () => {
                      formData.firstName && formData.lastName && formData.email && formData.phone;
 
   return (
-    <div
-      className="min-h-screen bg-white font-sans antialiased"
-      style={{ width: '100vw', marginLeft: '-50vw', marginRight: '-50vw', left: '50%', right: '50%', marginTop:'10%', position: 'relative' }}
-    >
+    <div className="min-h-screen bg-white font-sans antialiased px-4 sm:px-6 lg:px-8 pt-27 ">
       <div className="max-w-5xl mx-auto">
         {/* Header */}
         <div className="text-center mb-8">

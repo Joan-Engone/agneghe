@@ -73,12 +73,12 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div className="space-y-8">
-            <h4 className="text-xl font-semibold text-gray-900 relative inline-block">
+            <h4 className="text-xl font-semibold text-gray-900 relative inline-block ml-10">
               Contact
               <span className="block mt-1 w-12 h-1 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full ml-3"></span>
             </h4>
 
-            <div className="space-y-2">
+            <div className="space-y-6">
               {[
                 {
                   icon: <MapPin className="w-5 h-5 text-orange-600 group-hover:text-white transition-colors duration-200" />,
@@ -107,13 +107,13 @@ const Footer = () => {
               ].map(({ icon, bg, title, text }, i) => (
                 <div
                   key={i}
-                  className="flex items-start gap-x-4 group min-h-[60px]"
+                  className="flex items-start gap-x-4 group"
                 >
-                  <div className={`w-10 h-10 bg-gradient-to-br ${bg} rounded-xl flex items-center justify-center transition-all duration-200`}>
+                  <div className={`w-10 h-10 bg-gradient-to-br ${bg} rounded-xl flex items-center justify-center`}>
                     {icon}
                   </div>
-                  <div className="flex-1">
-                    <p className="text-gray-700 font-medium">{title}</p>
+                  <div className="flex-1 leading-tight">
+                    <p className="text-gray-700 font-medium mb-1">{title}</p>
                     <p className="text-sm text-gray-500">{text}</p>
                   </div>
                 </div>

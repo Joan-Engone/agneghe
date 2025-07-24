@@ -119,17 +119,7 @@ const HotelHomepage = () => {
           ))}
         </div>
 
-        {/* Carousel Indicators */}
-        <div className="absolute bottom-32 left-1/2 -translate-x-1/2 z-30 flex space-x-2">
-          {heroImages.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentSlide(index)}
-              className={`w-12 h-1 rounded-full transition-all ${index === currentSlide ? 'bg-amber-400' : 'bg-white/40'}`}
-              aria-label={`Go to slide ${index + 1}`}
-            />
-          ))} 
-        </div>
+        
 
         {/* Hero Content with Smooth Animations */}
         <div className="relative z-20 min-h-screen flex items-center justify-center text-center text-white px-4">
@@ -144,7 +134,7 @@ const HotelHomepage = () => {
               <div className="w-20 h-1 bg-gradient-to-r from-amber-400 to-teal-400 mx-auto animate-fade-in-delay-2" />
             </div>
 
-            <div className="flex flex-col sm:flex-row justify-center gap-4 mb-8 animate-fade-in-delay-3">
+            <div className="flex flex-row justify-center gap-4 mb-8 animate-fade-in-delay-3">
               <Link to="/reservation">
                 <button className="bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-white px-8 py-3 rounded-full transition-all transform hover:scale-105 font-medium">
                   Réserver Maintenant
